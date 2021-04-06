@@ -1,0 +1,361 @@
+/*------------------------------------------------*\
+  #GENERAL
+\*------------------------------------------------*/
+
+
+/* --------- Text ------------- */
+
+label {
+    margin: 5px 0px 5px 0px;
+    font-size: 1.1em;
+}
+
+
+
+
+/* --------- Inputs ------------- */
+
+input[type="text"] {
+    background-color: transparent;
+    border-style: none none none none;
+    border-color: black;
+    padding-bottom: 10px;
+}
+
+
+input[type="text"].name{
+    background-color: transparent;
+    border-style: none none none none;
+    margin-left:0px;
+    padding-bottom: 10px;
+    width: 150px;
+    height: 20px;
+}
+
+
+input[type="number"] {
+    background-color: transparent;
+    border: none;
+}
+
+textarea {
+    background-color: transparent;
+    width: 89%;
+    height: 70%;
+    margin-right: 15px;
+}
+
+input[type="checkbox"].sheet-checkbox {
+    border-style: solid black;
+    border-radius: 0px;
+}
+
+/* -----Hides up/down buttons on numberfields that don't need them ---*/
+
+input[type=number].sheet-ref::-webkit-inner-spin-button,
+input[type=number].sheet-ref::-webkit-outer-spin-button,
+input[type=number].sheet-txtfield::-webkit-inner-spin-button,
+input[type=number].sheet-txtfield::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number].sheet-ref,
+input[type=number].sheet-txtfield {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button{
+    -moz-appearance: textfield;
+}
+
+/* ------- Buttons ---------- */
+
+button[type="roll"].dice.btn.ui-draggable::before{
+  width: 10px;
+  height: 10px;
+  content: "";
+  margin-top:20px;
+}
+
+button[type="roll"].dice1.btn.ui-draggable::before{
+  width: 5px;
+  height: 5px;
+  content: "";
+  margin-left:100px;
+}
+
+button[type="roll"].dice.btn.ui-draggable{
+  width: 10px;
+  height: 10px;
+  margin-top:20px;
+}
+
+button[type="roll"].dice1.btn.ui-draggable{
+  width: 5px;
+  height: 5px;
+  content: "";
+  margin-left:100px;
+}
+
+button[type="roll"].dicemorte.btn.ui-draggable::before{
+  width: 10px;
+  height: 10px;
+  content: "";
+  margin-left: 35px;
+}
+
+button[type="roll"].dicemorte.btn.ui-draggable{
+  width: 10px;
+  height: 10px;
+  margin-left: 35px;
+}
+
+
+button[type="roll"].diceinit.btn.ui-draggable::before{
+  width: 10px;
+  height: 10px;
+  content: "";
+  margin-top: 20px;
+}
+
+button[type="roll"].diceinit.btn.ui-draggable{
+  width: 10px;
+  height: 10px;
+  margin-top: 20px;
+}
+
+/*-------Sheet--------*/
+
+.name {
+    grid-area: name;
+    margin: 10px;
+}
+
+.salute {
+    grid-area: salute;
+    margin: 10px;
+}
+
+.stats {
+    grid-area: stats;
+    margin: 10px;
+}
+
+.skills {
+    grid-area: skills;
+    margin: 10px;
+}
+
+.attack {
+    grid-area: attack;
+    margin: 10px;
+}
+
+.traits {
+    grid-area: traits;
+    margin: 10px;
+}
+
+.main {
+    display: grid;
+    width: 900px;
+    height: 1100px;
+    background-image: url(https://image.prntscr.com/image/LA3zJ69NQUuLl5yp6N7p7w.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    padding-right:40px;
+    grid-template-columns: 255px 260px 255px;
+    grid-template-rows: 110px 275px 230px 450px;
+    grid-template-areas: 
+        "name name ."
+        "skills salute stats"
+        "skills attack attack"
+        "skills traits traits";
+}
+
+/*------NAME-------*/
+
+.name {
+    display: grid;
+    margin-left: 0px;
+    padding-top:20px;
+    grid-template-columns: 260px 100px 105px;
+    grid-template-rows: 40px 40px;
+    grid-template-areas: 
+        "nome giocatore ."
+        "concetto specie classelivello";
+    
+}
+
+.nome {
+    grid-area: nome;
+}
+
+.giocatore {
+    grid-area: giocatore;
+}
+
+.concetto {
+    grid-area: concetto;
+}
+
+.specie {
+    grid-area: specie;
+}
+
+.classelivello {
+    grid-area: classelivello;
+}
+
+/*------SALUTE------*/
+
+.salute {
+    display: grid;
+    grid-template-columns: 50px 50px 140px;
+    grid-template-rows: 45px 14px 45px 35px 41px 21px 20px 20px 20px;
+    grid-template-areas: 
+        "maxhp . . "
+        "maxhp . button"
+        "sogliamorte hp spunte"
+        ". . sfinimento"
+        "condizioni1 condizioni1 condizioni1"
+        "condizioni2 condizioni2 condizioni2"
+        "condizioni3 condizioni3 condizioni3"
+        "condizioni4 condizioni4 condizioni4"
+        "condizioni5 condizioni5 condizioni5";
+}
+
+input[name=attr_punti-vitalità_max]{
+    grid-area: maxhp;
+    margin-left: 15px;
+}
+
+button[type=roll].dicemorte{
+    grid-area: button;
+} 
+
+input[name=attr_punti-vitalità]{
+    grid-area: hp;
+}
+
+input[name=attr_soglia-di-morte]{
+    grid-area: sogliamorte;
+}
+
+input[type=checkbox].spunte{
+    display: inline-block;
+    grid-area: spunte;
+}
+
+input[type=checkbox].sfinimento{
+    display: inline-block;
+    grid-area: sfinimento;
+}
+
+input[name=condizioni1]{
+    grid-area: condizioni1;
+}
+
+input[name=condizioni2]{
+    grid-area: condizioni2;
+}
+
+input[name=condizioni3]{
+    grid-area: condizioni3;
+}
+
+input[name=condizioni4]{
+    grid-area: condizioni4;
+}
+
+input[name=condizioni5]{
+    grid-area: condizioni5;
+}
+
+
+/*-----STATS-------*/
+
+.stats {
+    display: grid;
+    grid-template-columns: 55px 125px 55px;
+    grid-template-rows: 70px 65px 50px 60px;
+    grid-template-areas: 
+        ". . velocità"
+        "iniziativa . button"
+        ". . difesa"
+        "armatura . .";
+}
+
+input[name=attr_velocità]{
+    grid-area: velocità;
+}
+
+input[name=attr_difesa]{
+    grid-area: difesa;
+}
+
+input[name=attr_iniziativa]{
+    grid-area: iniziativa;
+}
+
+input[name=attr_armatura]{
+    grid-area: armatura;
+}
+
+button[type=roll].diceinit{
+    grid-area: button;
+}
+
+
+
+/*------SKILL------*/
+
+.skills-roll{
+    display: grid;
+    grid-template-columns: 55px 125px 25px 25px;
+    grid-template-rows: 39.2px;
+    grid-template-areas: 
+        "input . button .";
+}
+
+.skills-roll-sub{
+    display: grid;
+    grid-template-columns: 55px 125px 25px 25px;
+    grid-template-rows: 14px;
+    grid-template-areas: 
+        ". button grado totale";
+}
+
+input.skill {
+    grid-area: input;
+    text-align: center;
+    padding-top: 20px;
+    width: 20px;
+    height: 10px;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button[type=roll].dice {
+    grid-area: button;
+}
+
+button[type=roll].dice1 {
+    grid-area: button;
+}
+
+input.grado {
+    grid-area: grado;
+    text-align: center;
+    width: 10px;
+    height: 13px;
+    padding-left:5px;
+    -webkit-appearance: none;
+    margin: 0;
+}

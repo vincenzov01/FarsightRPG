@@ -1,0 +1,373 @@
+<div class="main">
+
+    <!-- NAME SECTION -->
+        <div class="name">
+          
+            <div class="nome">
+              <input class="name" style="width:260px" name="attr_character_name" type="text">
+            </div>
+            
+            <div class="giocatore">
+              <input class="name" style="width:205px" name="attr_giocatore" type="text">
+            </div>
+            
+            <div class="concetto">
+              <input class="name" style="width:260px" name="attr_concetto" type="text">
+            </div>
+            
+            <div class="specie">
+              <input class="name" style="width:100px" name="attr_specie" type="text">
+            </div>
+            
+            <div class="classelivello">
+              <input class="name" style="width:105px" name="attr_classelivello" type="text">
+            </div>
+        </div>
+          
+        <!-- SALUTE SECTION -->
+        <div class="salute">
+            <input name="attr_punti-vitalità_max" type="number" value="">
+            <button class="dicemorte" name="roll_tsmorte" type="roll" value="&{template:default} {{name=TS contro Morte}} {{Result=[[2d12]]}}"></button>
+            <input name="attr_punti-vitalità" type="number" value="">
+            <input name="attr_soglia-di-morte" type="number" value="">
+            <input class="spunte" type="checkbox" style="margin-left:77px;margin-top:4px;" name="successo1">
+            <input class="spunte" type="checkbox" style="margin-left:95px;margin-top:4px;" name="successo2">
+            <input class="spunte" type="checkbox" style="margin-left:114px;margin-top:4px;;" name="successo3">
+            <input class="spunte" type="checkbox" style="margin-left:87px;margin-top:20px;" name="fallimento1">
+            <input class="spunte" type="checkbox" style="margin-left:105px;margin-top:20px;" name="fallimento2">
+            <input class="spunte" type="checkbox" style="margin-left:124px;margin-top:20px;" name="fallimento3">
+            <input class="sfinimento" type="checkbox" style="margin-left:33px;margin-top:15px;" name="sfinimento1">
+            <input class="sfinimento" type="checkbox" style="margin-left:51px;margin-top:15px;" name="sfinimento2">
+            <input class="sfinimento" type="checkbox" style="margin-left:69px;margin-top:15px;" name="sfinimento3">
+            <input class="sfinimento" type="checkbox" style="margin-left:87px;margin-top:15px;" name="sfinimento4">
+            <input class="sfinimento" type="checkbox" style="margin-left:105px;margin-top:15px;" name="sfinimento5">
+            <input class="sfinimento" type="checkbox" style="margin-left:122px;margin-top:15px;" name="sfinimento6">
+            <input name="condizioni1" type="text" value="">
+            <input name="condizioni2" type="text" value="">
+            <input name="condizioni3" type="text" value="">
+            <input name="condizioni4" type="text" value="">
+            <input name="condizioni5" type="text" value="">
+        </div>
+      
+      
+        <!-- STATS SECTION -->
+          
+        <div class="stats">
+            
+            <input class="stat" name="attr_velocità" style="margin-left:25px;" type="number" value="">
+            
+            <input class="stat" name="attr_iniziativa" style="margin-left:25px;" type="number" value="">
+            <button class="diceinit" name="roll_iniziativa" type="roll" value="&{template:default} {{name=Iniziativa}} {{Result=[[2d12+(@{selected|iniziativa}) &{tracker}]]}}"></button>
+        
+            <input class="stat" name="attr_difesa" style="margin-left:25px;" type="number" value="">
+            
+            <input class="stat" name="attr_armatura" style="margin-left:25px;" type="number" value="">
+        
+        </div>
+        
+        <!-- SKILLS SECTION -->
+        <div class="skills">
+            <!-- COMBATTIVITA'--> 
+            <div class="skills-roll">
+                <input class="skill" name="attr_combattività" type="number" value="">
+                <button class="dice" name="roll_combattività" type="roll" value="&{template:default} {{name=Combattività}} {{Result=[[2d12+(@{combattività})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_armibianche" type="roll" value="&{template:default} {{name=Armi Bianche}} {{Result=[[2d12+(@{armibianche}+@{combattività})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_armibianche" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_armicinetiche" type="roll" value="&{template:default} {{name=Armi Cinetiche}} {{Result=[[2d12+(@{armicinetiche}+@{combattività})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_armicinetiche" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_armienergetiche" type="roll" value="&{template:default} {{name=Armi Energetiche}} {{Result=[[2d12+(@{armienergetiche}+@{combattività})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_armienergetiche" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_arminaturali" type="roll" value="&{template:default} {{name=Armi Naturali}} {{Result=[[2d12+(@{arminaturali}+@{combattività})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_arminaturali" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_artiglieria" type="roll" value="&{template:default} {{name=Artiglieria}} {{Result=[[2d12+(@{artiglieria}+@{combattività})]]}}"></button>
+                <input style="width:20px"class="grado" name="attr_artiglieria" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_lanciare" type="roll" value="&{template:default} {{name=Lanciare}} {{Result=[[2d12+(@{lanciare}+@{combattività})]]}}"></button>
+                <input style="width:20px"class="grado" name="attr_lanciare" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_lottare" type="roll" value="&{template:default} {{name=Lottare}} {{Result=[[2d12+(@{lottare}+@{combattività})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_lottare" type="number" value="">
+            </div>
+            
+            
+            
+            <!-- ROBUSTEZZA -->
+            <div class="skills-roll">
+                <input class="skill" name="attr_robustezza" type="number" value="">
+                <button class="dice" name="roll_robustezza" type="roll" value="&{template:default} {{name=Robustezza}} {{Result=[[2d12+(@{robustezza})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_atletica" type="roll" value="&{template:default} {{name=Atletica}} {{Result=[[2d12+(@{atletica}+@{robustezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_atletica" type="number"value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_forza" type="roll" value="&{template:default} {{name=Forza}} {{Result=[[2d12+(@{forza}+@{robustezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_forza" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_g-zero" type="roll" value="&{template:default} {{name=G-Zero}} {{Result=[[2d12+(@{g-zero}+@{robustezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_g-zero" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_nuotare" type="roll" value="&{template:default} {{name=Nuotare}} {{Result=[[2d12+(@{nuotare}+@{robustezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_nuotare" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_scalare" type="roll" value="&{template:default} {{name=Scalare}} {{Result=[[2d12+(@{scalare}+@{robustezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_scalare" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_tempra" type="roll" value="&{template:default} {{name=Tempra}} {{Result=[[2d12+(@{tempra}+@{robustezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_tempra" type="number" value="">
+            </div>
+            
+            
+            
+            
+            <!-- DESTREZZA -->
+            <div class="skills-roll">
+                <input class="skill" name="attr_destrezza" type="number" value="">
+                <button class="dice" name="roll_destrezza" type="roll" value="&{template:default} {{name=Destrezza}} {{Result=[[2d12+(@{destrezza})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_acrobazia" type="roll" value="&{template:default} {{name=Acrobazia}} {{Result=[[2d12+(@{acrobazia}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_acrobazia" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_cavalcare" type="roll" value="&{template:default} {{name=Cavalcare}} {{Result=[[2d12+(@{cavalcare}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_cavalcare" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_danza" type="roll" value="&{template:default} {{name=Danza}} {{Result=[[2d12+(@{danza}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_danza" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_furtività" type="roll" value="&{template:default} {{name=Furtività}} {{Result=[[2d12+(@{furtività}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_furtività" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_manolesta" type="roll" value="&{template:default} {{name=Manolesta}} {{Result=[[2d12+(@{manolesta}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_manolesta" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_pilotare" type="roll" value="&{template:default} {{name=Pilotare}} {{Result=[[2d12+(@{pilotare}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_pilotare" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_riflessi" type="roll" value="&{template:default} {{name=Riflessi}} {{Result=[[2d12+(@{riflessi}+@{destrezza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_riflessi" type="number"value="">
+            </div>
+            
+            
+            
+            
+            <!-- PERCEZIONE -->
+            <div class="skills-roll">
+                <input class="skill" name="attr_percezione" type="number" value="">
+                <button class="dice" name="roll_percezione" type="roll" value="&{template:default} {{name=Percezione}} {{Result=[[2d12+(@{percezione})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_allerta" type="roll" value="&{template:default} {{name=Allerta}} {{Result=[[2d12+(@{allerta}+@{percezione})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_allerta" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_arti-visive" type="roll" value="&{template:default} {{name=Arti Visive}} {{Result=[[2d12+(@{arti-visive}+@{percezione})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_arti-visive" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_intuito" type="roll" value="&{template:default} {{name=Intuito}} {{Result=[[2d12+(@{intuito}+@{percezione})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_intuito" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_ispezionare" type="roll" value="&{template:default} {{name=Ispezionare}} {{Result=[[2d12+(@{ispezionare}+@{percezione})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_ispezionare" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_musica" type="roll" value="&{template:default} {{name=Musica}} {{Result=[[2d12+(@{musica}+@{percezione})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_musica" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_sopravvivenza" type="roll" value="&{template:default} {{name=Sopravvivenza}} {{Result=[[2d12+(@{sopravvivenza}+@{percezione})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_sopravvivenza" type="number" value="">
+            </div> 
+            
+            
+            <!-- INTELLIGENZA -->
+            <div class="skills-roll">
+                <input class="skill" name="attr_intelligenza" type="number" value="">
+                <button class="dice" name="roll_intelligenza" type="roll" value="&{template:default} {{name=Intelligenza}} {{Result=[[2d12+(@{intelligenza})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_arti-belliche" type="roll" value="&{template:default} {{name=Arti Belliche}} {{Result=[[2d12+(@{arti-belliche}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_arti-belliche" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_erudizione" type="roll" value="&{template:default} {{name=Erudizione}} {{Result=[[2d12+(@{erudizione}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_erudizione" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_lucidità" type="roll" value="&{template:default} {{name=Lucidità}} {{Result=[[2d12+(@{lucidità}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_lucidità" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_medicina" type="roll" value="&{template:default} {{name=Medicina}} {{Result=[[2d12+(@{medicina}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_medicina" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_natura" type="roll" value="&{template:default} {{name=Natura}} {{Result=[[2d12+(@{natura}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_natura" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_psicopotere" type="roll" value="&{template:default} {{name=Psicopotere}} {{Result=[[2d12+(@{psicopotere}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_psicopotere" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_scienza" type="roll" value="&{template:default} {{name=Scienza}} {{Result=[[2d12+(@{scienza}+@{intelligenza})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_scienza" type="number" value="">
+            </div>
+            
+            
+            
+            <!-- VOLONTA' -->
+            <div class="skills-roll">
+                <input class="skill" name="attr_volontà" type="number" value="">
+                <button class="dice" name="roll_volontà" type="roll" value="&{template:default} {{name=Volontà}} {{Result=[[2d12+(@{volontà})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_carisma" type="roll" value="&{template:default} {{name=Carisma}} {{Result=[[2d12+(@{carisma}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_carisma" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_commercio" type="roll" value="&{template:default} {{name=Commercio}} {{Result=[[2d12+(@{commercio}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_commercio" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_fermezza" type="roll" value="&{template:default} {{name=Fermezza}} {{Result=[[2d12+(@{fermezza}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_fermezza" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_intimidire" type="roll" value="&{template:default} {{name=Intimidire}} {{Result=[[2d12+(@{intimidire}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_intimidire" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_mondanità" type="roll" value="&{template:default} {{name=Mondanità}} {{Result=[[2d12+(@{mondanità}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_mondanità" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_scaltrezza" type="roll" value="&{template:default} {{name=Scaltrezza}} {{Result=[[2d12+(@{scaltrezza}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_scaltrezza" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_vita-di-strada" type="roll" value="&{template:default} {{name=Vita di Strada}} {{Result=[[2d12+(@{vita-di-strada}+@{volontà})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_vita-di-strada" type="number" value="">
+            </div>
+            
+            
+            
+            <!-- TECNICA -->
+            <div class="skills-roll">
+                <input class="skill" name="attr_tecnica" type="number" value="">
+                <button class="dice" name="roll_tecnica" type="roll" value="&{template:default} {{name=Tecnica}} {{Result=[[2d12+(@{tecnica})]]}}"></button>
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_astronautica" type="roll" value="&{template:default} {{name=Astronautica}} {{Result=[[2d12+(@{astronautica}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_astronautica" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_cibernetica" type="roll" value="&{template:default} {{name=Cibernetica}} {{Result=[[2d12+(@{cibernetica}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_cibernetica" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_computer" type="roll" value="&{template:default} {{name=Computer}} {{Result=[[2d12+(@{computer}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_computer" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_esplosivi" type="roll" value="&{template:default} {{name=Esplosivi}} {{Result=[[2d12+(@{esplosivi}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_esplosivi" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_manomettere" type="roll" value="&{template:default} {{name=Manomettere}} {{Result=[[2d12+(@{manomettere}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_manomettere" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_meccatronica" type="roll" value="&{template:default} {{name=Meccatronica}} {{Result=[[2d12+(@{meccatronica}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_meccatronica" type="number" value="">
+            </div>
+            
+            <div class="skills-roll-sub">
+                <button class="dice1" name="roll_mistificazione" type="roll" value="&{template:default} {{name=mistificazione}} {{Result=[[2d12+(@{mistificazione}+@{tecnica})]]}}"></button>
+                <input style="width:20px" class="grado" name="attr_mistificazione" type="number" value="">
+            </div>
+            
+        </div>
+          
+        <!-- ATTACK SECTION -->
+          
+        <div class="attack">
+            Attack
+        </div>
+          
+        <!-- TRAIT SECTION -->
+        <div class="traits">
+            Traits
+        </div>
+        
+    </div>
