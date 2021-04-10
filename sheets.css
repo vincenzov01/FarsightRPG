@@ -321,6 +321,33 @@ button[type=roll].diceinit{
     grid-area: button;
 }
 
+/*-----TRAITS--------*/
+
+.traits {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 20px;
+    grid-template-areas: 
+        "trait1 trait2";
+}
+
+.ui-dialog input[type=text].trait1{
+    height:16px;
+    padding:0px;
+}
+
+.ui-dialog input[type=text].trait2{
+    height:16px;
+    padding:0px;
+}
+
+.trait1 {
+    grid-area:trait1;
+}
+
+.trait2 {
+    grid-area:trait2;
+}
 
 /*------ATTACKS------*/
 
@@ -330,13 +357,13 @@ button[type=roll].diceinit{
     grid-template-rows: 40px 10px 41px 10px 41px 10px 41px 10px;
     grid-template-areas: 
         "arma1 attacco1 danno1 portata1"
-        "minuzioni1 munizioni1 colpi1 colpi1"
+        "munizioni1 munizioni1 colpi1 colpi1"
         "arma2 attacco2 danno2 portata2"
-        "minuzioni2 munizioni2 colpi2 colpi2"
+        "munizioni2 munizioni2 colpi2 colpi2"
         "arma3 attacco3 danno3 portata3"
-        "minuzioni3 munizioni3 colpi3 colpi3"
+        "munizioni3 munizioni3 colpi3 colpi3"
         "arma4 attacco4 danno4 portata4"
-        "minuzioni4 munizioni4 colpi4 colpi4";
+        "munizioni4 munizioni4 colpi4 colpi4";
 }
 
 input[type="checkbox"].colpi{
