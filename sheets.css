@@ -160,12 +160,21 @@ button[type="roll"].diceinit.btn.ui-draggable{
     grid-area: traits;
     margin: 10px;
 }
+/*
+.charsheet {
+    width: 900px;
+    height: 1100px;
+    background-image: url(https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/FarsightRPG-IT-_SchedaPersonaggio-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+*/
 
 .main {
     display: grid;
     width: 900px;
     height: 1100px;
-    background-image: url(https://image.prntscr.com/image/LA3zJ69NQUuLl5yp6N7p7w.png);
+    background-image: url(https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/FarsightRPG-IT-_SchedaPersonaggio-1.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 40px;
@@ -310,6 +319,182 @@ input[name=attr_armatura]{
 
 button[type=roll].diceinit{
     grid-area: button;
+}
+
+
+/*------ATTACKS------*/
+
+.attack {
+    display: grid;
+    grid-template-columns: 264px 34px 140px 60px;
+    grid-template-rows: 40px 10px 41px 10px 41px 10px 41px 10px;
+    grid-template-areas: 
+        "arma1 attacco1 danno1 portata1"
+        "minuzioni1 munizioni1 colpi1 colpi1"
+        "arma2 attacco2 danno2 portata2"
+        "minuzioni2 munizioni2 colpi2 colpi2"
+        "arma3 attacco3 danno3 portata3"
+        "minuzioni3 munizioni3 colpi3 colpi3"
+        "arma4 attacco4 danno4 portata4"
+        "minuzioni4 munizioni4 colpi4 colpi4";
+}
+
+input[type="checkbox"].colpi{
+    height:10px;
+}
+
+input[type="text"].attacchi{
+    height:20px;
+    margin-top:18px;
+    padding-bottom:2px;
+}
+
+input[type="number"].attacchi{
+    height:20px;
+    margin-top:18px;
+    padding-bottom:2px;
+}
+
+input[type="number"].munizioni{
+    height:10px;
+}
+
+
+
+.arma1 {
+    grid-area: arma1;
+    margin-left:20px;
+}
+
+button[type=roll].arma1.dice{
+    grid-area: arma1
+}
+
+.attacco1 {
+    grid-area: attacco1;
+}
+
+.danno1 {
+    grid-area: danno1;
+}
+
+button[type=roll].danno1.dice{
+    grid-area: danno1;
+}
+
+.portata1 {
+    grid-area: portata1;
+}
+
+.munizioni1 {
+    grid-area: munizioni1;
+}
+
+.colpi1 {
+    grid-area: colpi1;
+    height: 10px;
+}
+
+.arma2 {
+    grid-area: arma2;
+    margin-left:20px;
+}
+
+button[type=roll].arma2.dice{
+    grid-area: arma2
+}
+
+.attacco2 {
+    grid-area: attacco2;
+}
+
+.danno2 {
+    grid-area: danno2;
+}
+
+button[type=roll].danno2.dice{
+    grid-area: danno2;
+}
+
+.portata2 {
+    grid-area: portata2;
+}
+
+.munizioni2 {
+    grid-area: munizioni2;
+}
+
+.colpi2 {
+    grid-area: colpi2;
+    height: 10px;
+}
+
+.arma3 {
+    grid-area: arma3;
+    margin-left:20px;
+}
+
+button[type=roll].arma3.dice{
+    grid-area: arma3;
+}
+
+.attacco3 {
+    grid-area: attacco3;
+}
+
+.danno3 {
+    grid-area: danno3;
+}
+
+button[type=roll].danno3.dice{
+    grid-area: danno3;
+}
+
+.portata3 {
+    grid-area: portata3;
+}
+
+.munizioni3 {
+    grid-area: munizioni3;
+}
+
+.colpi3 {
+    grid-area: colpi3;
+    height: 10px;
+}
+
+.arma4 {
+    grid-area: arma4;
+    margin-left:20px;
+}
+
+button[type=roll].arma4.dice{
+    grid-area: arma4
+}
+
+.attacco4 {
+    grid-area: attacco4;
+}
+
+.danno4 {
+    grid-area: danno4;
+}
+
+button[type=roll].danno4.dice{
+    grid-area: danno4;
+}
+
+.portata4 {
+    grid-area: portata4;
+}
+
+.munizioni4 {
+    grid-area: munizioni4;
+}
+
+.colpi4 {
+    grid-area: colpi4;
+    height: 10px;
 }
 
 
