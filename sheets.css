@@ -196,7 +196,13 @@
     background-color: olive;
     flex-direction: column;
   }
+
+  .sheet-shortbio {
+    grid-area: common;
+    background-color: brown;
+  }
   
+  /*--------SKILL SECTION---------*/
   .sheet-skill {
     grid-area: skill;
     background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/skill%20no%20esagoni.png");
@@ -285,6 +291,7 @@
     width: 10px;
   }
 
+  /*---------HEALTH SECTION-----------*/
   .sheet-health {
     background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/health%20top.png");
     background-repeat: no-repeat;
@@ -395,6 +402,8 @@
     margin-bottom: 0px;
   }
 
+  /*----------STATS SECTION------------*/
+
   .sheet-stats {
     background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/stats.png");
     background-repeat: no-repeat;
@@ -449,22 +458,13 @@
     align-items: center;
   }
 
-  
-  .sheet-common {
-    grid-area: common;
-    background-color: brown;
-  }
-  
-  .sheet-power {
-    grid-area: power;
-    background-color: coral;
-  }
-  
   .sheet-attack {
     grid-area: attack;
-    background-color: green;
+    background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/attack%20top.png");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
-  
+
   .sheet-inv {
     grid-area: inv;
     background-color: grey;
@@ -473,4 +473,9 @@
   .sheet-misc {
     grid-area: misc;
     background-color: chocolate;
+  }
+  
+  .sheet-power {
+    grid-area: power;
+    background-color: coral;
   }

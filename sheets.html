@@ -8,7 +8,7 @@
     </div>
 
 
-    <div class="sheet-common section">
+    <div class="sheet-shortbio section">
         <label>Char name: <input name="attr_character_name" type="text"/></label>
         <label>Class: <input name="attr_type" type="text" /></label>
         <label>Race: <input name="attr_race" type="text" /></label>
@@ -427,8 +427,16 @@
     </div>
 
     <div class="sheet-attack section">
-        <label>Attacks</label>
-        <textarea name="attr_attacks"></textarea>
+        <div class="attacchi">
+            <div class="repeat-attacchi">
+                <fieldset class="repeating_attacchi">
+                    <input class="titolo" name="attr_attachi" type="text">
+                    <input class="sheet-toggle-show" name="show" type="checkbox">
+                    <span class="sheet-toggle-show">Descrizione</span>
+                    <textarea class="descrizione" name="attr_attacchi_descrizione"></textarea>
+                </fieldset>
+            </div>
+        </div>
     </div>
 
     <div class="sheet-inv section">
