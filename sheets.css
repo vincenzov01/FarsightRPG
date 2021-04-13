@@ -65,6 +65,7 @@
     height: auto;
     background-color: transparent;
     margin-left: 10px;
+    margin-right: 10px;
   }
 
   textarea.descrizione{
@@ -389,9 +390,6 @@
 
   label[class="condizioni"]{
     grid-area:label;
-  }
-
-  label[class="condizioni"]{
     margin-left: 10px;
     font-size: 10px;
     margin-bottom: 0px;
