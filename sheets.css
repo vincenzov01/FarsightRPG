@@ -1,573 +1,429 @@
-/*------------------------------------------------*\
-  #GENERAL
-\*------------------------------------------------*/
+.sheet-main {
+    display: grid;
+    min-width: 900px;
+    min-height: 1300px;
+    grid-gap: 4px;
+    grid-template-columns: 300px 300px 300px ;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-areas:"common common header"
+                        "skill health stats"
+                        "skill attack power"
+                        "skill misc inv";
+  }
+  
+  /*----------------- GENERAL CSS ------------------*/
+  
+  textarea {
+    width: 90%;
+    height: 85%;
+  }
+  
+  .sheet-section {
+      padding: 5px;
+      border-style: solid;
+  }
+  
+  .sheet-flex-col {
+    display: flex;
+    flex-flow: row wrap;
+    /*justify-content: flex-start;*/
+  }
+  
+  .sheet-flex-center {
+    align-items: center;
+    justify-content: center;
+  }
 
+  .repcontainer{
+    margin-top: 0px;
+    background-image:url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/section%20center.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+  }
 
-/* --------- Text ------------- */
+  .repcontrol{
+    background-image: url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/section%20bottom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 65px;
+  }
+  
+  .repitem{
+    grid-area: repeat-condizioni;
+    align-items: center;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:"titolo"
+                        "toggle"
+                        "descrizione";
+  }
 
-label {
-    margin: 5px 0px 5px 0px;
-    font-size: 1.1em;
-}
-
-
-
-
-/* --------- Inputs ------------- */
-
-input[type="text"] {
+  input.titolo{
+    grid-area: titolo;
+    width: auto;
+    height: auto;
     background-color: transparent;
+    margin-left: 10px;
+  }
+
+  textarea.descrizione{
+    grid-area: descrizione;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    margin-left: 10px;
+  }
+
+  input.sheet-toggle-show{
+    grid-area: toggle;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  input.sheet-toggle-show:not(:checked) ~ textarea.descrizione {
+    display: none;
+  }
+
+  span.sheet-toggle-show{
+    grid-area: toggle;
+    margin-left: 25px;
+    font-size: 8px;
+  }
+
+  /*------------- Input CSS--------------------------*/
+
+  input[type="text"] {
+    /*background-color: transparent;*/
     border-style: none none none none;
     border-color: black;
-    padding-bottom: 10px;
-}
-
-
-input[type="text"].name{
     background-color: transparent;
-    border-style: none none none none;
-    margin-left:0px;
-    padding-bottom: 10px;
-    width: 150px;
-    height: 20px;
-}
+    padding-bottom: 5px;
+  }
 
-
-input[type="number"] {
-    background-color: transparent;
+  input[type="number"] {
     border: none;
+  }
+
+  input[type="number"].esagono{
+    background-image: url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/hexagon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-top: 10px;
+    position:absolute;
+    overflow:hidden;
+    z-index:0;
+    height: 50px;
+    text-align: center;
+  }
+
+  input[type="number"].esagonosmall{
+    background-image: url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/hexagon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-top: 10px;
+    position:absolute;
+    overflow:hidden;
+    z-index:0;
+    height: 35px;
+    width: 30px !important;
+    text-align: center;
+  }
+
+  button.btn.repcontrol_add{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  button.btn.repcontrol_edit{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+  .ui-dialog .charsheet input[type=number].main-skill{
+      height:50px;
+      margin-left:15px;
+      text-align: center;
+  }
+
+  .ui-dialog .charsheet input[type=number].sub-skill{
+    height:16px;
+    width: 30px;
+    text-align: center;
+    margin-left:0px;
 }
 
-textarea {
-    background-color: transparent;
+  textarea {
+    /*background-color: transparent;*/
     width: 89%;
     height: 70%;
     margin-right: 15px;
-}
+  }
 
-input[type="checkbox"].sheet-checkbox {
-    border-style: solid black;
-    border-radius: 0px;
-}
+  input[type="checkbox"].sheet-checkbox {
+  }
 
-/* -----Hides up/down buttons on numberfields that don't need them ---*/
 
-input[type=number].sheet-ref::-webkit-inner-spin-button,
-input[type=number].sheet-ref::-webkit-outer-spin-button,
-input[type=number].sheet-txtfield::-webkit-inner-spin-button,
-input[type=number].sheet-txtfield::-webkit-outer-spin-button {
+  input[type=number].sheet-ref::-webkit-inner-spin-button,
+  input[type=number].sheet-ref::-webkit-outer-spin-button,
+  input[type=number].sheet-txtfield::-webkit-inner-spin-button,
+  input[type=number].sheet-txtfield::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
-input[type=number].sheet-ref,
-input[type=number].sheet-txtfield {
+  }
+  input[type=number].sheet-ref,
+  input[type=number].sheet-txtfield {
     -moz-appearance: textfield;
-}
+  }
 
-input[type=number]::-webkit-inner-spin-button{
+  input[type=number]::-webkit-inner-spin-button{
     -webkit-appearance: none;
     margin: 0;
-}
-
-input[type=number]::-webkit-inner-spin-button{
+  }
+  input[type=number]::-webkit-inner-spin-button{
     -moz-appearance: textfield;
-}
-
-/* ------- Buttons ---------- */
-
-button[type="roll"].dice.btn.ui-draggable::before{
-  width: 10px;
-  height: 10px;
-  content: "";
-  margin-top:20px;
-}
-
-button[type="roll"].dice1.btn.ui-draggable::before{
-  width: 5px;
-  height: 5px;
-  content: "";
-  margin-left:100px;
-}
-
-button[type="roll"].dice.btn.ui-draggable{
-  width: 10px;
-  height: 10px;
-  margin-top:20px;
-}
-
-button[type="roll"].dice1.btn.ui-draggable{
-  width: 5px;
-  height: 5px;
-  content: "";
-  margin-left:100px;
-}
-
-button[type="roll"].dicemorte.btn.ui-draggable::before{
-  width: 10px;
-  height: 10px;
-  content: "";
-  margin-left: 35px;
-}
-
-button[type="roll"].dicemorte.btn.ui-draggable{
-  width: 10px;
-  height: 10px;
-  margin-left: 35px;
-}
-
-
-button[type="roll"].diceinit.btn.ui-draggable::before{
-  width: 10px;
-  height: 10px;
-  content: "";
-  margin-top: 20px;
-}
-
-button[type="roll"].diceinit.btn.ui-draggable{
-  width: 10px;
-  height: 10px;
-  margin-top: 20px;
-}
-
-/*-------Sheet--------*/
-
-.name {
-    grid-area: name;
-    margin: 10px;
-}
-
-.salute {
-    grid-area: salute;
-    margin: 10px;
-}
-
-.stats {
-    grid-area: stats;
-    margin: 10px;
-}
-
-.skills {
-    grid-area: skills;
-    margin: 10px;
-}
-
-.attack {
-    grid-area: attack;
-    margin: 10px;
-}
-
-.traits {
-    grid-area: traits;
-    margin: 10px;
-}
-/*
-.charsheet {
-    width: 900px;
-    height: 1100px;
-    background-image: url(https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/FarsightRPG-IT-_SchedaPersonaggio-1.png);
+  }
+  
+  /*------------- Section-specific CSS -------------*/
+  
+  .sheet-header {
+    grid-area: header;
+    background-color: olive;
+    flex-direction: column;
+  }
+  
+  .sheet-skill {
+    grid-area: skill;
+    background-image: url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/skill%20no%20esagoni.png");
+    background-size: 250px;
     background-size: contain;
     background-repeat: no-repeat;
-}
-*/
+  }
 
-.main {
+  .sheet-main-skill{
+    margin-top: 25px;
+    align-items: center;
     display: grid;
-    width: 900px;
-    height: 1100px;
-    background-image: url(https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/FarsightRPG-IT-_SchedaPersonaggio-1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-    padding-right:40px;
-    grid-template-columns: 255px 260px 255px;
-    grid-template-rows: 110px 275px 230px 450px;
-    grid-template-areas: 
-        "name name ."
-        "skills salute stats"
-        "skills attack attack"
-        "skills traits traits";
-}
+    grid-template-columns: 70px 130px 30px 30px 30px;
+    grid-template-rows: 25px;
+    grid-template-areas:"input label button . .";
+  }
 
-/*------NAME-------*/
-
-.name {
+  .sheet-sub-skill{
     display: grid;
-    margin-left: 0px;
-    padding-top:20px;
-    grid-template-columns: 260px 100px 105px;
-    grid-template-rows: 40px 40px;
-    grid-template-areas: 
-        "nome giocatore ."
-        "concetto specie classelivello";
-    
-}
-
-.nome {
-    grid-area: nome;
-}
-
-.giocatore {
-    grid-area: giocatore;
-}
-
-.concetto {
-    grid-area: concetto;
-}
-
-.specie {
-    grid-area: specie;
-}
-
-.classelivello {
-    grid-area: classelivello;
-}
-
-/*------SALUTE------*/
-
-.salute {
-    display: grid;
-    grid-template-columns: 50px 50px 140px;
-    grid-template-rows: 45px 14px 45px 35px 41px 21px 20px 20px 20px;
-    grid-template-areas: 
-        "maxhp . . "
-        "maxhp . button"
-        "sogliamorte hp spunte"
-        ". . sfinimento"
-        "condizioni1 condizioni1 condizioni1"
-        "condizioni2 condizioni2 condizioni2"
-        "condizioni3 condizioni3 condizioni3"
-        "condizioni4 condizioni4 condizioni4"
-        "condizioni5 condizioni5 condizioni5";
-}
-
-input[name=attr_punti-vitalità_max]{
-    grid-area: maxhp;
-    margin-left: 15px;
-}
-
-button[type=roll].dicemorte{
-    grid-area: button;
-} 
-
-input[name=attr_punti-vitalità]{
-    grid-area: hp;
-}
-
-input[name=attr_soglia-di-morte]{
-    grid-area: sogliamorte;
-}
-
-input[type=checkbox].spunte{
-    display: inline-block;
-    grid-area: spunte;
-}
-
-input[type=checkbox].sfinimento{
-    display: inline-block;
-    grid-area: sfinimento;
-}
-
-input[name=condizioni1]{
-    grid-area: condizioni1;
-}
-
-input[name=condizioni2]{
-    grid-area: condizioni2;
-}
-
-input[name=condizioni3]{
-    grid-area: condizioni3;
-}
-
-input[name=condizioni4]{
-    grid-area: condizioni4;
-}
-
-input[name=condizioni5]{
-    grid-area: condizioni5;
-}
-
-
-/*-----STATS-------*/
-
-.stats {
-    display: grid;
-    grid-template-columns: 55px 125px 55px;
-    grid-template-rows: 70px 65px 50px 60px;
-    grid-template-areas: 
-        ". . velocità"
-        "iniziativa . button"
-        ". . difesa"
-        "armatura . .";
-}
-
-input[name=attr_velocità]{
-    grid-area: velocità;
-}
-
-input[name=attr_difesa]{
-    grid-area: difesa;
-}
-
-input[name=attr_iniziativa]{
-    grid-area: iniziativa;
-}
-
-input[name=attr_armatura]{
-    grid-area: armatura;
-}
-
-button[type=roll].diceinit{
-    grid-area: button;
-}
-
-/*-----TRAITS--------*/
-
-.traits {
-    display: grid;
-    grid-template-columns: 250px 250px;
-    grid-template-rows: 20px;
-    grid-template-areas: 
-        "trait1 trait2";
-}
-
-.ui-dialog input[type=text].trait1{
-    height:16px;
-    padding:0px;
-}
-
-.ui-dialog input[type=text].trait2{
-    height:16px;
-    padding:0px;
-}
-
-.trait1 {
-    grid-area:trait1;
-}
-
-.trait2 {
-    grid-area:trait2;
-}
-
-/*------ATTACKS------*/
-
-.attack {
-    display: grid;
-    grid-template-columns: 264px 34px 140px 60px;
-    grid-template-rows: 40px 10px 41px 10px 41px 10px 41px 10px;
-    grid-template-areas: 
-        "arma1 attacco1 danno1 portata1"
-        "munizioni1 munizioni1 colpi1 colpi1"
-        "arma2 attacco2 danno2 portata2"
-        "munizioni2 munizioni2 colpi2 colpi2"
-        "arma3 attacco3 danno3 portata3"
-        "munizioni3 munizioni3 colpi3 colpi3"
-        "arma4 attacco4 danno4 portata4"
-        "munizioni4 munizioni4 colpi4 colpi4";
-}
-
-input[type="checkbox"].colpi{
-    height:10px;
-}
-
-input[type="text"].attacchi{
-    height:20px;
-    margin-top:18px;
-    padding-bottom:2px;
-}
-
-input[type="number"].attacchi{
-    height:20px;
-    margin-top:18px;
-    padding-bottom:2px;
-}
-
-input[type="number"].munizioni{
-    height:10px;
-}
-
-
-
-.arma1 {
-    grid-area: arma1;
-    margin-left:20px;
-}
-
-button[type=roll].arma1.dice{
-    grid-area: arma1
-}
-
-.attacco1 {
-    grid-area: attacco1;
-}
-
-.danno1 {
-    grid-area: danno1;
-}
-
-button[type=roll].danno1.dice{
-    grid-area: danno1;
-}
-
-.portata1 {
-    grid-area: portata1;
-}
-
-.munizioni1 {
-    grid-area: munizioni1;
-}
-
-.colpi1 {
-    grid-area: colpi1;
-    height: 10px;
-}
-
-.arma2 {
-    grid-area: arma2;
-    margin-left:20px;
-}
-
-button[type=roll].arma2.dice{
-    grid-area: arma2
-}
-
-.attacco2 {
-    grid-area: attacco2;
-}
-
-.danno2 {
-    grid-area: danno2;
-}
-
-button[type=roll].danno2.dice{
-    grid-area: danno2;
-}
-
-.portata2 {
-    grid-area: portata2;
-}
-
-.munizioni2 {
-    grid-area: munizioni2;
-}
-
-.colpi2 {
-    grid-area: colpi2;
-    height: 10px;
-}
-
-.arma3 {
-    grid-area: arma3;
-    margin-left:20px;
-}
-
-button[type=roll].arma3.dice{
-    grid-area: arma3;
-}
-
-.attacco3 {
-    grid-area: attacco3;
-}
-
-.danno3 {
-    grid-area: danno3;
-}
-
-button[type=roll].danno3.dice{
-    grid-area: danno3;
-}
-
-.portata3 {
-    grid-area: portata3;
-}
-
-.munizioni3 {
-    grid-area: munizioni3;
-}
-
-.colpi3 {
-    grid-area: colpi3;
-    height: 10px;
-}
-
-.arma4 {
-    grid-area: arma4;
-    margin-left:20px;
-}
-
-button[type=roll].arma4.dice{
-    grid-area: arma4
-}
-
-.attacco4 {
-    grid-area: attacco4;
-}
-
-.danno4 {
-    grid-area: danno4;
-}
-
-button[type=roll].danno4.dice{
-    grid-area: danno4;
-}
-
-.portata4 {
-    grid-area: portata4;
-}
-
-.munizioni4 {
-    grid-area: munizioni4;
-}
-
-.colpi4 {
-    grid-area: colpi4;
-    height: 10px;
-}
-
-
-
-/*------SKILL------*/
-
-.skills-roll{
-    display: grid;
-    grid-template-columns: 55px 125px 25px 25px;
-    grid-template-rows: 39.2px;
-    grid-template-areas: 
-        "input . button .";
-}
-
-.skills-roll-sub{
-    display: grid;
-    grid-template-columns: 55px 125px 25px 25px;
-    grid-template-rows: 14px;
-    grid-template-areas: 
-        ". button grado totale";
-}
-
-input.skill {
+    align-items: center;
+    grid-template-columns: 70px 130px 30px 30px 30px;
+    grid-template-rows: 16px;
+    grid-template-areas:". label button input .";
+  }
+
+  input[class="main-skill"]{
     grid-area: input;
-    text-align: center;
-    padding-top: 20px;
-    width: 20px;
+    margin-top: 10px;
+  }
+
+  label[class="main-skill"]{
+    grid-area: label;
+    margin-bottom:0px;
+  }
+
+  button[type="roll"].main-skill.btn.ui-draggable::before{
+    content: "";
+    border: 0px;
+    grid-area: button;
+    height: 15px;
+    width: 15px;
+  }
+  button[type="roll"].main-skill.btn.ui-draggable{
+    background-image: url(https://cdn2.iconfinder.com/data/icons/space-82/64/space-ship-512.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    border: 0px;
+    border-style: none;
+    background-color: transparent;
+    grid-area: button;
+    height: 15px;
+    width: 15px;
+  }
+
+  input[class="sub-skill"]{
+    grid-area: input;
+    background-image: url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/grade.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    height: 16px;
+  }
+  
+  label[class="sub-skill"]{
+    grid-area: label;
+    font-size: 10px;
+    margin-bottom:0px;
+  }
+  
+  button[type="roll"].sub-skill.btn.ui-draggable::before{
+    content: "";
+    border: 0px;
+    grid-area: button;
     height: 10px;
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-button[type=roll].dice {
-    grid-area: button;
-}
-
-button[type=roll].dice1 {
-    grid-area: button;
-}
-
-input.grado {
-    grid-area: grado;
-    text-align: center;
     width: 10px;
-    height: 13px;
-    padding-left:5px;
-    -webkit-appearance: none;
-    margin: 0;
-}
+  }
+
+  button[type="roll"].sub-skill.btn.ui-draggable{
+    background-image: url(https://cdn2.iconfinder.com/data/icons/space-82/64/space-ship-512.png);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    border: 0px;
+    border-style: none;
+    background-color: transparent;
+    grid-area: button;
+    height: 10px;
+    width: 10px;
+  }
+
+  .sheet-health {
+    background-image: url("https://github.com/vincenzov01/FarsightRPG/blob/main/images/health%20top.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    grid-area: health;
+  }
+
+  input[type="number"].puntivitalità{
+    margin-left: 44px;
+    margin-top: 50px;
+  }
+
+  label[class="puntivitalità"]{
+    position:absolute;
+    overflow:hidden;
+    z-index:0;
+    margin-left: 70px;
+    margin-top: 25px;
+  }
+
+  input[type="number"].puntivitalitàmax{
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  label[class="sogliamorte"]{
+    position:absolute;
+    overflow:hidden;
+    z-index:0;
+    margin-top: 90px;
+    margin-left: 10px;
+    width: 30px;
+    text-align: center;
+    line-height: 1;
+    font-size: 10px;
+  }
+
+  input[type="number"].sogliamorte{
+    margin-top: 54px;
+    margin-left: 10px;
+  }
+
+  .salvezzamorte{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 150px 75px 75px;
+    grid-template-rows: 20px 16px 16px;
+    grid-template-areas:". salvezzamorte salvezzamorte"
+                        ". labelsuccesso checkboxsuccesso"
+                        ". labelfallimento checkboxfallimento";
+
+  }
+
+  label[class="salvezzamorte"]{
+    grid-area: salvezzamorte;
+    font-size: 10px;
+  }
+
+  label[class="successo"]{
+    grid-area: labelsuccesso;
+    font-size: 10px;
+  }
+
+  input[type="checkbox"].successo{
+    grid-area: checkboxsuccesso;
+  }
+
+  label[class="fallimento"]{
+    grid-area: labelfallimento;
+    font-size: 10px;
+  }
+
+  input[type="checkbox"].fallimento{
+    grid-area: checkboxfallimento;
+  }
+
+  .affaticamento{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 20px 16px;
+    grid-template-areas:". label"
+                        ". checkbox";
+
+  }
+
+  label[class="affaticamento"]{
+    grid-area: label;
+    font-size: 10px;
+  }
+
+  input[type="checkbox"].affaticamento{
+    grid-area: checkbox;
+  }
+
+  .condizioni{
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: auto;
+    grid-template-areas:"label"
+                        "repeat-condizioni";
+  }
+
+  label[class="condizioni"]{
+    grid-area:label;
+  }
+
+  label[class="condizioni"]{
+    margin-left: 10px;
+    font-size: 10px;
+    margin-bottom: 0px;
+  }
+
+  .sheet-stats {
+    grid-area: stats;
+    background-color: rgb(128, 62, 0);
+  }
+
+  
+  .sheet-common {
+    grid-area: common;
+    background-color: brown;
+  }
+  
+  .sheet-power {
+    grid-area: power;
+    background-color: coral;
+  }
+  
+  .sheet-attack {
+    grid-area: attack;
+    background-color: green;
+  }
+  
+  .sheet-inv {
+    grid-area: inv;
+    background-color: grey;
+  }
+  
+  .sheet-misc {
+    grid-area: misc;
+    background-color: chocolate;
+  }
