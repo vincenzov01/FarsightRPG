@@ -398,8 +398,10 @@
   }
 
   .sheet-stats {
+    background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/stats.png");
+    background-repeat: no-repeat;
+    background-size: contain;
     grid-area: stats;
-    background-color: rgb(128, 62, 0);
   }
 
   
