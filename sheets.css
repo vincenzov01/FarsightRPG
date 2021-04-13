@@ -4,7 +4,7 @@
     min-height: 1300px;
     grid-gap: 4px;
     grid-template-columns: 300px 300px 300px ;
-    grid-template-rows: max-content max-content max-content;
+    grid-template-rows: min-content min-content min-content;
     grid-template-areas:"common common header"
                         "skill health stats"
                         "skill attack power"
@@ -164,6 +164,7 @@
   }
 
   input[type="checkbox"].sheet-checkbox {
+    background-image: none;
   }
 
 
@@ -198,7 +199,6 @@
   .sheet-skill {
     grid-area: skill;
     background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/skill%20no%20esagoni.png");
-    background-size: 250px;
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -402,6 +402,51 @@
     background-repeat: no-repeat;
     background-size: contain;
     grid-area: stats;
+  }
+
+  .stats{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 75px 150px 75px;
+    grid-template-rows: 50px;
+    grid-template-areas:"left label right";
+  }
+
+  label[class="stat"]{
+    grid-area: label;
+    align-items: center;
+  }
+
+  button[type="roll"].stat.btn.ui-draggable{
+    grid-area: label;
+    background-image: url(https://cdn2.iconfinder.com/data/icons/space-82/64/space-ship-512.png);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    border: 0px;
+    border-style: none;
+    background-color: transparent;
+    height: 10px;
+    width: 10px;
+  }
+
+  button[type="roll"].stat.btn.ui-draggable::before{
+    content: "";
+    border: 0px;
+    grid-area: label;
+    height: 15px;
+    width: 15px;
+  }
+
+  input[type="number"].stat.right{
+    grid-area: right;
+    margin-left: 240px;
+    align-items: center;
+  }
+
+  input[type="number"].stat.left{
+    grid-area: left;
+    margin-left: 10px;
+    align-items: center;
   }
 
   
