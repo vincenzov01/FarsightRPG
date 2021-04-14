@@ -2,7 +2,7 @@
 <div class="sheet-main">
 
 
-    <div class="sheet-header flex-center section">
+    <div class="sheet-header section">
         <h1>Generic Name RPG</h1>
         <span>The Template Sheet</span>
     </div>
@@ -426,7 +426,7 @@
         </div>
     </div>
 
-    <div class="sheet-attack section">
+    <div class="sheet-attack section min">
         <div class="attacchi">
             <div class="repeat-attacchi">
                 <fieldset class="repeating_attacchi">
@@ -440,20 +440,42 @@
     </div>
 
     <div class="sheet-inv section">
-        <label>Inventory</label>
-        <textarea name="attr_inventory"></textarea>
+        <div class="inventario">
+            <div class="repeat-inventario">
+                <fieldset class="repeating_inventario">
+                    <input class="titolo" name="attr_inventario" type="text">
+                    <input class="sheet-toggle-show" name="show" type="checkbox">
+                    <span class="sheet-toggle-show">Descrizione</span>
+                    <textarea class="descrizione" name="attr_inventario_descrizione"></textarea>
+                </fieldset>
+            </div>
+        </div>
     </div>
 
-    <div class="sheet-misc section">
-        <label>Physical Description</label>
-        <textarea name="attr_description"></textarea>
+    <div class="sheet-trait section">
+        <div class="tratti">
+            <div class="repeat-tratti">
+                <fieldset class="repeating_tratti">
+                    <input class="titolo" name="attr_tratti" type="text">
+                    <input class="sheet-toggle-show" name="show" type="checkbox">
+                    <span class="sheet-toggle-show">Descrizione</span>
+                    <textarea class="descrizione" name="attr_tratti_descrizione"></textarea>
+                </fieldset>
+            </div>
+        </div>
     </div>
 
     <div class="sheet-power section">
-        <label>Power</label>
-        <fieldset class="repeating_power">
-            <input name="attr_power" type="text" />
-        </fieldset>
+        <div class="power">
+            <div class="repeat-power">
+                <fieldset class="repeating_power">
+                    <input class="titolo" name="attr_power" type="text">
+                    <input class="sheet-toggle-show" name="show" type="checkbox">
+                    <span class="sheet-toggle-show">Descrizione</span>
+                    <textarea class="descrizione" name="attr_power_descrizione"></textarea>
+                </fieldset>
+            </div>
+        </div>
     </div>
 
 

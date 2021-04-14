@@ -4,11 +4,12 @@
     min-height: 1300px;
     grid-gap: 4px;
     grid-template-columns: 300px 300px 300px ;
-    grid-template-rows: min-content min-content min-content;
-    grid-template-areas:"common common header"
-                        "skill health stats"
-                        "skill attack power"
-                        "skill misc inv";
+    grid-template-rows: auto minmax(310px,auto) minmax(50px,auto) auto;
+    grid-template-areas:
+        "common common header"
+        "skill health stats"
+        "skill attack trait"
+        "skill inv power";
   }
   
   /*----------------- GENERAL CSS ------------------*/
@@ -22,17 +23,7 @@
       padding: 5px;
       border-style: solid;
   }
-  
-  .sheet-flex-col {
-    display: flex;
-    flex-flow: row wrap;
-    /*justify-content: flex-start;*/
-  }
-  
-  .sheet-flex-center {
-    align-items: center;
-    justify-content: center;
-  }
+
 
   .repcontainer{
     margin-top: 0px;
@@ -194,7 +185,6 @@
   .sheet-header {
     grid-area: header;
     background-color: olive;
-    flex-direction: column;
   }
 
   .sheet-shortbio {
@@ -463,19 +453,20 @@
     background-image: url("https://raw.githubusercontent.com/vincenzov01/FarsightRPG/main/images/attack%20top.png");
     background-repeat: no-repeat;
     background-size: contain;
+    min-height: auto;
+    padding-top: 18px;
   }
 
   .sheet-inv {
     grid-area: inv;
-    background-color: grey;
+    padding-top: 18px;
   }
   
-  .sheet-misc {
-    grid-area: misc;
-    background-color: chocolate;
+  .sheet-traits {
+    grid-area: traits;
+    padding-top: 18px;
   }
   
   .sheet-power {
     grid-area: power;
-    background-color: coral;
   }
